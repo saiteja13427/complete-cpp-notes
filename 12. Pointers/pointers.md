@@ -104,3 +104,24 @@ int func(int *arr (or) int arr[]){
 
 func(arr)
 ```
+
+### Problems
+1. (**Important**)Postfix/prefix (x++, ++x) combined with x*
+```cpp
+int arr[] = {10, 20};
+int *p1 = arr, *p2 = arr, *p3=arr;
+//What happens on these three statements
+
+// Both prefix and * are at same precedence and there order of associativity is right to left so
+//++(*p1) => Increemnt 10 to 11
+++*p1;
+
+// With above explanation it will be
+// *(++p2) => So p2 will point to 20 not 10
+*++p2;
+
+// postfix have higher precedence then *
+// So *(p3++) => Again p3 will just point to 20 and not 10
+*p3++;
+
+```

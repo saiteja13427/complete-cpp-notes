@@ -47,7 +47,7 @@ sizeof(arr)/sizeoff(arr[0]);
 **Methods**
 
 1. Max: `*max_element(arr, arr+n)`
-2. Sum: `accumulate(arr, arr+n, 0)
+2. Sum: `accumulate(arr, arr+n, 0)`
 
 
 **2D Arrays**

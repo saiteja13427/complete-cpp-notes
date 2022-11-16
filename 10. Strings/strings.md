@@ -53,7 +53,7 @@ str.substr(1, 3)
 str.find("eek");
 ```
 Read word: `cin<<strVar`;
-Read a line: `getline(cin, strVar, charWhereToStop)`;
+Read a line: `getline(cin, strVar, charWhereToStop(optional))`;
 
 Cpp strings can be accessed by index or using foreach also we can traverse.
 

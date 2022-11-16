@@ -42,4 +42,3 @@ int main () {
 1. **Global Variables**: Variables declared globally. These are initialised and don't have gardbage in it.
 2. **Static Variables**: These are variables which will be static, they are created once and will be there till program lifetime. These are also intialised as 0.
 3. **const variables**: Cannot be modified.
-4.

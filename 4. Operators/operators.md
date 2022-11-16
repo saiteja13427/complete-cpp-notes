@@ -12,14 +12,14 @@ Prefix: ++x (Increments and then assigns)
 
 **Note**: Don't use multiple unary operators like x++++x, x++/x++, x++\*++x etc. These are undefined behaviours as they are compiler specific then.
 
-**Typecase**
+**Typecast**
 
 int x = 50, y = 100;
 `C style typecasting, this blindly typecasts`
 double z = (double)x/y;
 
 `Cpp style typecasting, static_cast casts after checking`
-double z = static_cast<double>x/y;
+double z = static_cast\<double>x/y;
 
 **CPP Precedence Table**
 Order of precedence is defined by CPP standard.

@@ -70,3 +70,68 @@ int avg (int arr[], int n) throw (string, int) {
 When a function throws exception then the control just goes up the stack through all the caller chain until its find the relevant catch block and skips anything until it finds the catch.
 
 If a catch is not found then it crashes.
+
+### User Defined Exceptions
+Users can also define exceptions in form of classes.
+
+Example
+```cpp
+class ArraySizeZeroException {}
+class ArraySizeNegativeException {}
+
+int main(){
+  try {
+    ....
+    throw ArraySizeZeroException();
+  }
+  catch (ArraySizeZeroException &e){
+    ...
+  }
+  catch (ArraySizeNegativeException &e){
+    ... 
+  }
+}
+```
+
+**Best Practise:**
+Use user defined exceptions only and don't throw primitive types.
+
+STL has some pre defined exception classes as well. Example: bad_alloc, bad_cast etc.
+
+All these exceptions inherit from a root **exception class.**
+
+**Recommeded:**
+Use user defined class exceptions and extend these exception classes which you define with root exception class.
+
+Example:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class UserException: public exception {
+    public:
+    virtual const char* what() const throw() {
+        return "User defined exception!";
+    }
+};
+
+int main() {
+    // Write C++ code here
+    std::cout << "Hello world!";
+    try {
+        throw UserException();
+    }
+    // Here we are catching exception class but still what will output UserExceptions what output.
+
+    // This is because if we have a reference to child class from baseclass type and we call a function we call derived class fucntion call.
+
+    // Thus we can throw any class based exception which extends exception and we can catch it with one catch block.
+    catch(exception &e){
+        cout<<e.what()<<endl;
+    }
+
+    return 0;
+}
+```
+
